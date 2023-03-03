@@ -1,11 +1,11 @@
-About sqlglot
-=============
+About sqlglot-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sqlglot-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tobymao/sqlglot
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sqlglot-feedstock/blob/main/LICENSE.txt)
 
 Summary: An easily customizable SQL parser and transpiler
 
