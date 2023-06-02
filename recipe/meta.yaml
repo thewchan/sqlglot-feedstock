@@ -33,8 +33,11 @@ test:
     - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
+    - pandas
     - pyspark
     - pytest
+    - python-dateutil
+    - python-duckdb >=0.6
 
 about:
   home: https://github.com/tobymao/sqlglot
