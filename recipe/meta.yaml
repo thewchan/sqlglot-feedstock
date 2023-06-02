@@ -24,12 +24,16 @@ requirements:
     - python >=3.6
 
 test:
+  source_files:
+    - tests
   imports:
     - sqlglot
   commands:
     - pip check
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/tobymao/sqlglot
