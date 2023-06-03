@@ -32,6 +32,7 @@ test:
     - pip check
     - pytest -vvv --capture=tee-sys tests
   requires:
+    - openjdk
     - pip
     - pandas
     - pyspark
