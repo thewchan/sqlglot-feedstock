@@ -1,5 +1,5 @@
 {% set name = "sqlglot" %}
-{% set version = "17.9.0" %}
+{% set version = "17.9.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sqlglot-{{ version }}.tar.gz
-  sha256: a7aa51f0ef7bf32f8a916f685150589b2ac314aeb20c704daad159ca48214f18
+  sha256: 2a72ec4078f12debbb3e3aad9f5e1ac0591c9729f5b6becfdf45b64b48b41217
 
 build:
   number: 0
