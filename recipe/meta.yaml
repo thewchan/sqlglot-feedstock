@@ -43,7 +43,7 @@ outputs:
         - pyspark
         - pytest
         - python-dateutil
-        - python-duckdb >=0.6
+        - python-duckdb  # >=0.6 CI complaining about unable to satisfy this
 
   - name: {{ name }}-rs
     build:
@@ -75,7 +75,7 @@ outputs:
         - pyspark
         - pytest
         - python-dateutil
-        - python-duckdb  # >=0.6 CI complining about unable to satisfy this
+        - python-duckdb  # >=0.6 CI complaining about unable to satisfy this
 
 about:
   home: https://github.com/tobymao/sqlglot
