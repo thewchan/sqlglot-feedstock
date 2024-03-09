@@ -13,11 +13,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13745&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sqlglot-feedstock?branchName=main">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13745&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sqlglot-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13745&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sqlglot-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13745&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sqlglot-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13745&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sqlglot-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -28,6 +61,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-sqlglot-green.svg)](https://anaconda.org/conda-forge/sqlglot) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sqlglot.svg)](https://anaconda.org/conda-forge/sqlglot) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sqlglot.svg)](https://anaconda.org/conda-forge/sqlglot) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sqlglot.svg)](https://anaconda.org/conda-forge/sqlglot) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sqlglot--rs-green.svg)](https://anaconda.org/conda-forge/sqlglot-rs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sqlglot-rs.svg)](https://anaconda.org/conda-forge/sqlglot-rs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sqlglot-rs.svg)](https://anaconda.org/conda-forge/sqlglot-rs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sqlglot-rs.svg)](https://anaconda.org/conda-forge/sqlglot-rs) |
 
 Installing sqlglot
 ==================
@@ -39,16 +73,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sqlglot` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `sqlglot, sqlglot-rs` can be installed with `conda`:
 
 ```
-conda install sqlglot
+conda install sqlglot sqlglot-rs
 ```
 
 or with `mamba`:
 
 ```
-mamba install sqlglot
+mamba install sqlglot sqlglot-rs
 ```
 
 It is possible to list all of the versions of `sqlglot` available on your platform with `conda`:
