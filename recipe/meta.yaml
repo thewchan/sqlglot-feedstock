@@ -11,34 +11,71 @@ source:
   sha256: ee2985b40601c7b553f17c2c13685f9f831bdfe3edba78fb7b385fc55c5a8a30
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
 
-requirements:
-  host:
-    - pip
-    - python >=3.7
-    - setuptools_scm
-  run:
-    - python >=3.7
+outputs:
+  - name: {{ name }}
+    build:
+      script: {{ PYTHON }} -m pip install . -vv
+      nochar: python
 
-test:
-  source_files:
-    - tests
-  imports:
-    - sqlglot
-  commands:
-    - pip check
-    - pytest -vvv --capture=tee-sys tests
-  requires:
-    - openjdk
-    - pip
-    - pandas
-    - pyspark
-    - pytest
-    - python-dateutil
-    - python-duckdb >=0.6
+    requirements:
+      host:
+        - pip
+        - python >=3.7
+        - setuptools_scm
+      run:
+        - python >=3.7
+
+    test:
+      source_files:
+        - tests
+      imports:
+        - sqlglot
+      commands:
+        - pip check
+        - pytest -vvv --capture=tee-sys tests
+      requires:
+        - openjdk
+        - pip
+        - pandas
+        - pyspark
+        - pytest
+        - python-dateutil
+        - python-duckdb >=0.6
+
+  - name: {{ name }}-rs
+    build:
+      script: echo Nothing to do.
+      nochar: python
+
+    requirements:
+      host:
+        - pip
+        - python >=3.7
+        - setuptools_scm
+      run:
+        - python >=3.7
+        - {{ pin_subpackage('sqlglot', exact=True) }}
+        - sqlglotrs
+
+    test:
+      source_files:
+        - tests
+      imports:
+        - sqlglot
+      commands:
+        - pip check
+        - pytest -vvv --capture=tee-sys tests
+      requires:
+        - openjdk
+        - pip
+        - pandas
+        - pyspark
+        - pytest
+        - python-dateutil
+        - python-duckdb >=0.6
 
 about:
   home: https://github.com/tobymao/sqlglot
