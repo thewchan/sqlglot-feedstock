@@ -76,7 +76,7 @@ outputs:
         - pyspark
         - pytest
         - python-dateutil
-        - python-duckdb >=0.6
+        - python-duckdb
 
 about:
   home: https://github.com/tobymao/sqlglot
