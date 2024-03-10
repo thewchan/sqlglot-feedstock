@@ -35,14 +35,14 @@ outputs:
         - sqlglot
       commands:
         - pip check
-        # - pytest -vvv --capture=tee-sys tests
+        - pytest -vvv --capture=tee-sys tests
       requires:
         - pip
-        # - openjdk
-        # - pandas
-        # - pyspark
-        # - pytest
-        # - python-dateutil
+        - openjdk
+        - pandas
+        - pyspark
+        - pytest
+        - python-dateutil
         # - python-duckdb  # >=0.6 CI complaining about unable to satisfy this
 
   - name: {{ name }}-rs
