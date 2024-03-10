@@ -11,7 +11,7 @@ source:
   sha256: ee2985b40601c7b553f17c2c13685f9f831bdfe3edba78fb7b385fc55c5a8a30
 
 build:
-  number: 1
+  number: 2
   noarch: python
 
 outputs:
@@ -47,7 +47,7 @@ outputs:
   - name: {{ name }}-rs
     build:
       script: echo Nothing to do.
-      nochar: python
+      noarch: python
 
     requirements:
       host:
@@ -66,8 +66,6 @@ outputs:
         - sqlglot
       commands:
         - pip check
-        - rm tests/test_optimizer.py
-        - rm tests/test_executor.py
         - pytest -vvv --capture=tee-sys -k tests
       requires:
         - pip
@@ -76,6 +74,7 @@ outputs:
         - pyspark
         - pytest
         - python-dateutil
+        - python-duckdb >=0.6
 
 about:
   home: https://github.com/tobymao/sqlglot
