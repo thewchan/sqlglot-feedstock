@@ -68,13 +68,15 @@ outputs:
         - pip check
         - pytest -vvv --capture=tee-sys tests
       requires:
+        - python <3.12  # duckdb not available for python 3.12
+
         - pip
         - openjdk
         - pandas
         - pyspark
         - pytest
         - python-dateutil
-        - python-duckdb
+        - python-duckdb >=0.6
 
 about:
   home: https://github.com/tobymao/sqlglot
