@@ -1,24 +1,28 @@
-{% set name = "sqlglot" %}
 {% set version = "23.0.5" %}
 
+# from `sqlglotrs/Cargo.toml#package/version`
+{% set sqlglotrs_version = "0.1.2" %}
+
+# handle undefined PYTHON in `noarch: generic` outputs
+{% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
 
 package:
-  name: {{ name|lower }}
+  name: sqlglot
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sqlglot-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/s/sqlglot/sqlglot-{{ version }}.tar.gz
   sha256: 68386c5aebdc9a1c74e2a623f6373805a2f839d205d46945258dde5ac692d515
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
-  - name: {{ name }}
+  - name: sqlglot
     build:
-      script: python -m pip install . --no-deps --no-build-isolation -vv
       noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
     requirements:
       host:
@@ -27,6 +31,8 @@ outputs:
         - setuptools_scm
       run:
         - python >=3.7
+      run_constrained:
+        - sqlglot {{ sqlglotrs_version }}.*
 
     test:
       source_files:
@@ -35,46 +41,46 @@ outputs:
         - sqlglot
       commands:
         - pip check
-        - pytest -vvv --capture=tee-sys tests
+        - pytest -vvv --capture=tee-sys --color=yes --tb=long tests
       requires:
-        - pip
         - openjdk
         - pandas
+        - pip
         - pyspark
         - pytest
         - python-dateutil
 
-  - name: {{ name }}-rs
+  - name: sqlglot-rs
     build:
-      script: echo Nothing to do.
-      noarch: python
+      noarch: generic
 
     requirements:
-      host:
-        - pip
-        - python >=3.7
-        - setuptools_scm
       run:
-        - python >=3.7
         - {{ pin_subpackage('sqlglot', exact=True) }}
         - sqlglotrs
 
     test:
+      files:
+        - test_sqlglotrs_version.py
       source_files:
         - tests
+        - sqlglotrs/Cargo.toml
       imports:
         - sqlglot
       commands:
         - pip check
-        - pytest -vvv --capture=tee-sys -k tests
+        - pytest -vvv --capture=tee-sys --color=yes --tb=long test_sqlglotrs_version.py
+        - pytest -vvv --capture=tee-sys --color=yes --tb=long tests
       requires:
-        - pip
         - openjdk
         - pandas
+        - pip
         - pyspark
         - pytest
         - python-dateutil
         - python-duckdb >=0.6
+        # for checking sqlglotrs version against Cargo.toml
+        - tomli
 
 about:
   home: https://github.com/tobymao/sqlglot
