@@ -15,7 +15,7 @@ source:
   sha256: 50f2a52fe82b5fa8531c0bfe4d9a11e336515db7aa835e80bb990eb9b11e8e7b
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -32,7 +32,7 @@ outputs:
       run:
         - python >=3.7
       run_constrained:
-        - sqlglot {{ sqlglotrs_version }}.*
+        - sqlglotrs {{ sqlglotrs_version }}.*
 
     test:
       source_files:
