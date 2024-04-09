@@ -1,4 +1,4 @@
-{% set version = "23.8.0" %}
+{% set version = "23.8.1" %}
 
 # from `sqlglotrs/Cargo.toml#package/version`
 {% set sqlglotrs_version = "0.2.0" %}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sqlglot/sqlglot-{{ version }}.tar.gz
-  sha256: d534d85abe00b1507d8dfbd6ef91210f09b4a63b7aa27c7edd650f40df585028
+  sha256: 478f675a34ded0c39129817de8ca0fafd8c522f791334402093228785d636318
 
 build:
   number: 0
