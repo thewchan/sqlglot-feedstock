@@ -1,7 +1,7 @@
-{% set version = "25.3.0" %}
+{% set version = "25.3.1" %}
 
 # from `sqlglotrs/Cargo.toml#package/version`
-{% set sqlglotrs_version = "0.2.7" %}
+{% set sqlglotrs_version = "0.2.8" %}
 
 # handle undefined PYTHON in `noarch: generic` outputs
 {% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sqlglot/sqlglot-{{ version }}.tar.gz
-  sha256: c4ce5e38148c29f3bb19d8dcf1bfaaa4833eb283e9e6771e39a7e90dd6b79a0c
+  sha256: 0055c0f6ab9419306a0ebd45bbb46842263af8db209b554ff89e88ab2f09c03d
 
 build:
   number: 0
