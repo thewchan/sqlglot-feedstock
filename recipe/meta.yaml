@@ -1,7 +1,7 @@
 {% set version = "25.28.0" %}
 
 # from `sqlglotrs/Cargo.toml#package/version`
-{% set sqlglotrs_version = "0.2.12" %}
+{% set sqlglotrs_version = "0.2.13" %}
 
 # handle undefined PYTHON in `noarch: generic` outputs
 {% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
