@@ -11,7 +11,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/sqlglot/sqlglot-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/sqlglot/sqlglot-{{ version }}.tar.gz
   sha256: fcb4e2f5cb9a17ca3f003f6c165afcbe0001c0a57d477252727fef56b8f8b352
 
 build:
