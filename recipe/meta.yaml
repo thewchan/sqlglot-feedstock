@@ -27,11 +27,11 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.7
+        - python {{ python_min }}
         - setuptools_scm
         - setuptools
       run:
-        - python >=3.7
+        - python >={{ python_min }}
       run_constrained:
         - sqlglotrs {{ sqlglotrs_version }}.*
 
@@ -50,6 +50,7 @@ outputs:
         - pyspark
         - pytest
         - python-dateutil
+        - python {{ python_min }}
 
   - name: sqlglot-rs
     build:
@@ -82,6 +83,7 @@ outputs:
         - python-duckdb >=0.6
         # for checking sqlglotrs version against Cargo.toml
         - tomli
+        - python {{ python_min }}
 
 about:
   home: https://github.com/tobymao/sqlglot
