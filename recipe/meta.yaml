@@ -33,7 +33,7 @@ outputs:
       run:
         - python >={{ python_min }}
       run_constrained:
-        - sqlglotrs {{ sqlglotrs_version }}.*
+        - sqlglotrs {{ sqlglotrs_version }}
 
     test:
       source_files:
