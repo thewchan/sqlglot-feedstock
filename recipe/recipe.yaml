@@ -34,7 +34,7 @@ outputs:
       run:
         - python >=${{ python_min }}
       run_constraints:
-        - sqlglotrs ${{ sqlglotrs_version }}
+        - sqlglotrs ==${{ sqlglotrs_version }}
     tests:
       - python:
           imports:
